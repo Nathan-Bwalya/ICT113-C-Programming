@@ -1,0 +1,145 @@
+STUDENT DATABASE MANAGEMENT SYSTEM USING C PROGRAMMING LANGUAGE
+
+ICT113 Mini Project Report
+
+1.0 Introduction
+
+This project presents a Student Database Management System developed using the C programming language. The system is designed to manage student academic records through a file-based storage approach, simulating basic database functionality.
+
+The system allows users to perform full CRUD operations (Create, Read, Update, and Delete) on student records. Each record contains marks for multiple assessment components including quiz, midterm, assignment, exam, and project. The system automatically calculates total marks and assigns a grade based on predefined grading criteria.
+
+The project is implemented using structured programming concepts and file handling techniques in C.
+
+2.0 Objectives of the Project
+
+The main objectives of this system are:
+
+To apply file handling techniques in C programming.
+To design a simple database-like system for managing student records.
+To implement CRUD (Create, Read, Update, Delete) operations.
+To automate grade calculation based on total marks.
+To improve understanding of structured programming and system design.
+
+3.0 System Description
+
+The system is a menu-driven application that allows the user to manage student records stored in a binary file named:
+
+students.dat
+
+Each student record contains the following fields:
+
+Name
+Quiz marks (10)
+Midterm marks (10)
+Assignment marks (10)
+Exam marks (10)
+Project marks (10)
+Total marks (50)
+Grade
+
+4.0 System Features
+
+4.1 Register Student (Create)
+
+This feature allows the user to enter student details. The system calculates total marks and assigns a grade automatically before storing the record in a file.
+
+4.2 List All Students (Read All)
+
+This feature displays all stored student records from the file. It reads the binary file sequentially and prints each student's details.
+
+4.3 Search Student (Read Single Record)
+
+This feature allows the user to search for a student by name. The system performs a case-insensitive comparison and displays the matching record.
+
+4.4 Update Student Record
+
+This feature allows modification of existing student marks. The system reads all records, updates the selected record, and rewrites the file using a temporary file approach.
+
+4.5 Delete Student Record
+
+This feature removes a student record from the system. The program copies all records except the selected one into a temporary file, then replaces the original file.
+
+5.0 System Design and Methodology
+
+The system is developed using structured programming in C. A struct is used to define the student data model:
+
+struct Student {
+    char name[50];
+    int quiz;
+    int midterm;
+    int assignment;
+    int exam;
+    int project;
+    float total;
+    char grade;
+};
+
+5.1 File Handling Approach
+
+The system uses a single binary file:
+
+students.dat
+
+File operations used include:
+
+fopen() → open file
+fread() → read record
+fwrite() → write record
+fclose() → close file
+
+Temporary files are used for update and delete operations to ensure data integrity.
+
+6.0 Grading System
+
+The grading system is based on total marks out of 50:
+
+Total Marks	Grade
+45 – 50	A
+40 – 44	B
+35 – 39	C
+30 – 34	D
+Below 30	F
+
+This allows automatic evaluation of student performance.
+
+7.0 Key Programming Concepts Used
+
+The project demonstrates the use of:
+
+Structures (struct)
+File handling (fopen, fread, fwrite, fclose)
+Conditional statements (if-else)
+Loops (while)
+String handling
+Menu-driven programming
+CRUD system design
+8.0 System Advantages
+Simple and easy to use menu interface
+Permanent storage using file system
+Supports multiple student records
+Allows modification and deletion of data
+Automates grading process
+9.0 Limitations
+Data is stored in binary files without encryption
+No graphical user interface (console-based only)
+Limited search flexibility (name-based only)
+No multi-user authentication system
+10.0 Possible Improvements
+
+Future improvements may include:
+
+Implementation of a graphical user interface (GUI)
+Database integration (MySQL or SQLite)
+Advanced search functionality
+User login and authentication system
+Data encryption for security
+11.0 Conclusion
+
+This project successfully demonstrates the development of a file-based Student Database Management System using C programming language. It applies key programming concepts such as file handling, structures, and conditional logic to simulate real-world database operations.
+
+The system provides a strong foundation for understanding how data management systems work at a basic level and can be further extended into more advanced applications.
+
+12.0 References
+C Programming Language – Kernighan & Ritchie
+ICT113 Lecture Notes – Introduction to Programming
+Online C Programming Tutorials (File Handling Concepts)

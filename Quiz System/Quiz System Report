@@ -1,0 +1,159 @@
+QUIZ MANAGEMENT SYSTEM USING C PROGRAMMING LANGUAGE
+
+ICT113 Mini Project Report
+
+1.0 Introduction
+
+This project presents a Level 2 Quiz Management System developed using the C programming language. The system simulates a basic Learning Management System (LMS) that allows multiple students to register, log in, attempt quizzes, and view results.
+
+The system is designed using structured programming principles and file handling techniques in C. It supports multiple users and stores data persistently using binary files, making it a simple database-like application.
+
+The project also includes an admin functionality that allows the addition of quiz questions, as well as a leaderboard system for displaying student performance.
+
+2.0 Objectives of the Project
+
+The main objectives of this project are:
+
+To develop a multi-user quiz system using C programming.
+To implement file handling for persistent data storage.
+To simulate a basic login authentication system.
+To design a quiz engine with automatic scoring.
+To introduce an admin panel for question management.
+To display student performance using a leaderboard.
+
+3.0 System Description
+
+The system is a menu-driven application that manages students and quiz questions using two binary files:
+
+students.dat
+questions.dat
+
+The system allows:
+
+Student registration
+Student login authentication
+Quiz participation
+Score calculation and storage
+Admin question entry
+Leaderboard display
+
+4.0 System Features
+
+4.1 Student Registration
+
+Students are able to create an account by entering their name and password. The data is stored in a binary file (students.dat).
+
+4.2 Login System
+
+The system validates student credentials by comparing input data with stored records in the file. Only registered students can access the quiz.
+
+4.3 Quiz Engine
+
+After successful login, students are presented with multiple-choice questions loaded from questions.dat. Each correct answer contributes to the final score.
+
+4.4 Admin Question Management
+
+An admin feature allows new quiz questions to be added to the system. Each question contains:
+
+Question text
+Four multiple-choice options
+Correct answer indicator
+
+4.5 Score Update System
+
+After completing the quiz, the student’s score is updated in the student database using a temporary file method to ensure safe data modification.
+
+4.6 Leaderboard
+
+The leaderboard displays all registered students along with their quiz scores, allowing comparison of performance.
+
+5.0 System Design and Methodology
+
+The system is built using structured programming in C. It uses two main structures:
+
+Student Structure:
+struct Student {
+    char name[50];
+    char password[50];
+    int score;
+};
+
+Question Structure:
+struct Question {
+    char question[100];
+    char A[50];
+    char B[50];
+    char C[50];
+    char D[50];
+    char correct;
+};
+
+5.1 File Handling Approach
+
+The system uses binary file storage:
+
+students.dat → stores student login data and scores
+questions.dat → stores quiz questions
+
+File operations used include:
+
+fopen() → open file
+fwrite() → write data
+fread() → read data
+fclose() → close file
+
+A temporary file is used when updating student scores to maintain data integrity.
+
+6.0 Algorithm Design
+
+Quiz Flow Algorithm:
+Start system
+Display menu
+Student logs in
+Load quiz questions from file
+Display each question
+Accept user answer
+Compare with correct answer
+Calculate total score
+Store updated score in file
+Display results
+
+7.0 System Advantages
+Supports multiple students (multi-user system)
+Uses persistent file storage
+Simple authentication system
+Automatic score calculation
+Admin-controlled question system
+Leaderboard for performance tracking
+
+8.0 Limitations
+Console-based interface only
+No encryption for passwords
+No random question shuffling (basic version)
+No time limit per question
+Limited search and analytics features
+
+9.0 Possible Improvements
+
+Future enhancements may include:
+
+Randomized question selection
+Time-based quiz system
+Password encryption
+Graphical user interface (GUI)
+Sorting leaderboard by highest score
+Database integration (MySQL/SQLite)
+
+10.0 Conclusion
+
+The Level 2 Quiz Management System successfully demonstrates the use of C programming concepts such as structures, file handling, loops, and conditional statements to build a functional multi-user application.
+
+The system simulates a basic learning management system and introduces real-world software development concepts such as authentication, data persistence, and modular programming.
+
+This project provides a strong foundation for understanding how educational software systems are designed and implemented.
+
+11.0 References
+
+C Programming Language – Kernighan & Ritchie
+ICT113 Lecture Notes – Programming Fundamentals
+Online C Programming Tutorials (File Handling and Structures)

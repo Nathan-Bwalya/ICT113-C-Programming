@@ -1,0 +1,146 @@
+ONLINE BANKING SYSTEM IN C PROGRAMMING LANGUAGE
+ICT113 Mini Project Report
+1.0 Introduction
+
+This project presents a simple Online Banking System developed using the C programming language. The system simulates basic banking operations such as account registration, login authentication, balance inquiry, deposits, withdrawals, fund transfer, and password change.
+
+The project is designed as a file-based system, where each user account is stored in a separate binary file using the user’s phone number as the filename. This approach allows persistent data storage without the use of external database systems.
+
+The implementation is inspired by a tutorial-based learning approach and was developed to strengthen understanding of core C programming concepts such as structures, file handling, loops, conditional statements, and string manipulation.
+
+2.0 Objectives of the Project
+
+The main objectives of this project are:
+
+To apply fundamental C programming concepts in a real-world simulation.
+To implement user authentication using file handling techniques.
+To simulate basic banking operations using structured programming.
+To understand data storage using binary files in C.
+To improve problem-solving skills through system design and logic building.
+
+3.0 Tools and Technologies Used
+
+Programming Language: C Language
+Compiler: GCC / Turbo C / Code::Blocks (any standard C compiler)
+Concept Areas:
+Structures
+File Handling (fopen, fread, fwrite, fclose)
+String Handling (strcpy, strcmp, strcat)
+Conditional Statements (if, switch-case)
+Loops (while loop)
+Standard Input/Output
+4.0 System Design and Methodology
+
+The system is designed using a modular and file-based approach. Each user is represented using a structure:
+
+Phone Number
+Account Number
+Password
+Balance
+
+4.1 File-Based Storage System
+
+Each user’s data is stored in a separate binary file:
+
+phone_number.dat
+
+For example:
+
+0971234567.dat
+
+This file acts as the user’s database record.
+
+4.2 System Flow
+
+The system operates in two main phases:
+
+(a) Registration Phase
+User enters account details.
+Initial balance is set to 0.
+Data is stored using fwrite() into a binary file.
+
+(b) Login Phase
+User enters phone number and password.
+System opens the corresponding file using fopen().
+Data is loaded using fread().
+Password is verified using strcmp().
+
+If authentication is successful, the user gains access to banking operations.
+
+5.0 System Features
+
+5.1 Account Registration
+
+Users can create a new account by providing their account number, phone number, and password. The system automatically initializes their balance to zero and stores the data in a file.
+
+5.2 Login Authentication
+
+Users must provide valid credentials (phone number and password). The system verifies the credentials by reading stored file data.
+
+5.3 Balance Inquiry
+
+Displays the current account balance stored in memory.
+
+5.4 Deposit Function
+
+Users can deposit money into their account. The balance is updated and saved back into the file using fwrite().
+
+5.5 Withdrawal Function
+
+Users can withdraw money from their account. The system deducts the amount and updates the file.
+
+5.6 Fund Transfer
+
+Users can transfer money to another account using the recipient’s phone number. The system:
+
+Opens recipient file
+Adds amount to recipient balance
+Deducts amount from sender balance
+Updates both files
+
+5.7 Password Change
+
+Users can update their password, which is then stored back into their file.
+
+6.0 Key Programming Concepts Applied
+
+Structures (struct): Used to group user data into a single unit.
+File Handling: Used for storing and retrieving user account data.
+String Functions:
+strcpy() → Copy strings
+strcat() → Append file extension
+strcmp() → Compare passwords
+Control Structures:
+if-else for decision making
+switch-case for menu operations
+while loop for continuous transactions
+
+7.0 Limitations of the System
+
+No encryption for passwords (stored in plain text).
+No input validation (negative withdrawals possible).
+No database system (file-based storage only).
+Limited error handling.
+No multi-user concurrency control.
+
+8.0 Suggested Improvements (Upgrades)
+
+To improve the system in future versions, the following enhancements can be implemented:
+
+Password encryption using hashing techniques.
+Input validation for secure transactions.
+Implementation of a central database (MySQL or SQLite).
+Transaction history tracking.
+Login attempt limits for security.
+GUI-based interface instead of console application.
+9.0 Conclusion
+
+This project demonstrates the application of C programming fundamentals in building a simple online banking system. It provides practical experience in handling file operations, user authentication, and structured programming techniques.
+
+Although the system is simplified and tutorial-inspired, it successfully simulates real-world banking operations and provides a strong foundation for understanding more advanced software development concepts.
+
+10.0 References
+
+C Programming Language – Kernighan & Ritchie
+Lecture Notes ICT113 – Introduction to Programming
+Online C Programming Tutorials (Tutorial-based implementation)
